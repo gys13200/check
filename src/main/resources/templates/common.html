@@ -1,0 +1,18 @@
+<!DOCTYPE html "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:fragment="reference" >
+        <!--[if lt IE 9]>
+        <script th:src="@{http://libs.baidu.com/jquery/1.11.1/jquery.min.js}"></script>
+        <script th:src="@{http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js}"></script>
+        <script th:src="@{assets/js/amazeui.ie8polyfill.min.js}"></script>
+        <![endif]-->
+
+        <!--[if (gte IE 9)|!(IE)]><!-->
+        <script th:src="@{/assets/js/jquery.min.js}"></script>
+        <!--<![endif]-->
+        <script th:src="@{/assets/js/amazeui.min.js}"></script>
+        <script th:src="@{/assets/js/app.js}"></script>
+    </div>
+</body>
+</html>
