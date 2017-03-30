@@ -13,8 +13,8 @@ import com.baidu.ueditor.ActionEnter;
  * Created by gys on 2017/3/29.
  */
 
-@Controller
-@RequestMapping("/ueditor")
+//@Controller
+//@RequestMapping("/ueditor")
 public class UEditorController {
 
     @RequestMapping("/index")
