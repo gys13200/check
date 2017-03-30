@@ -1,0 +1,12 @@
+{
+  "imageUrlPrefix": "",
+  "imageActionName": "uploadimage",
+  "imageAllowFiles": [
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".bmp"
+  ],
+  "imagePathFormat": "/apps/achieve/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}"
+}
