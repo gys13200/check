@@ -2,3 +2,11 @@ spring:
   thymeleaf:
     cache: false       # 关闭缓存
     mode: LEGACYHTML5  # 非严格html
+  datasource:
+    url: jdbc:mysql://mysql123.nat123.cc:30061/esswmb
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapperLocations: classpath*:org/prototype/check/dao/*.xml

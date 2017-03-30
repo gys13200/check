@@ -1,6 +1,8 @@
 {
   "imageUrlPrefix": "",
+  "imageMaxSize":1024000,
   "imageActionName": "uploadimage",
+  "imageFieldName": "image",
   "imageAllowFiles": [
     ".png",
     ".jpg",
