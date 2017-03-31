@@ -21,5 +21,24 @@
         <script type="text/javascript" charset="utf-8" th:src="@{/ueditor/lang/zh-cn/zh-cn.js}"></script>
 
     </div>
+
+    <div th:fragment="modal(id, title, text)">
+        <div class="am-modal am-modal-no-btn" tabindex="-1" th:id="id" >
+            <div class="am-modal-dialog">
+                <div class="am-modal-hd" th:text="${title}">Modal 标题
+                    <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+                </div>
+                <div class="am-modal-bd" th:text="${text}">
+                    Modal 内容。
+                </div>
+            </div>
+        </div>
+        <script th:inline="text">
+            var id = '[[id]]';
+            $modal = $("#" + id);
+            $modal.modal();
+        </script>
+    </div>
+
 </body>
 </html>

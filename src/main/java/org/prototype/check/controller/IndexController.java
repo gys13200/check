@@ -1,6 +1,11 @@
 package org.prototype.check.controller;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,16 +25,25 @@ public class IndexController {
         return "index";
     }
 
-    @RequestMapping("/admin-index")
-    public String index(){
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(String username, String password, Model model){
+        try{
+            if(username == null || password == null){
+                throw new AuthenticationException("用户名或密码为空");
+            }
+            Subject user = SecurityUtils.getSubject();
+            UsernamePasswordToken token = new UsernamePasswordToken(username, password.toCharArray());
+            user.login(token);
+            token.setRememberMe(true);
+        }catch (AuthenticationException e){
+            model.addAttribute("loginErrorMsg", e.getMessage());
+            return "login";
+        }
         return "admin-index";
     }
 
-    @RequestMapping(value = "/{path}", method = RequestMethod.GET)
+    @RequestMapping(value = "/static/{path}", method = RequestMethod.GET)
     public String hub(@PathVariable String path){
-
-        System.err.println("============ hub:" + path);
-
         return path;
     }
 }
