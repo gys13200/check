@@ -4,6 +4,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.prototype.check.util.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,7 +29,7 @@ public class IndexController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(String username, String password, Model model){
         try{
-            if(username == null || password == null){
+            if(StringUtils.isEmpty(username) || StringUtils.isEmpty(password)){
                 throw new AuthenticationException("用户名或密码为空");
             }
             Subject user = SecurityUtils.getSubject();
