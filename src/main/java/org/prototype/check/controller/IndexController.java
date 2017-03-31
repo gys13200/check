@@ -37,7 +37,8 @@ public class IndexController {
             user.login(token);
             token.setRememberMe(true);
         }catch (AuthenticationException e){
-            model.addAttribute("loginErrorMsg", e.getMessage());
+            model.addAttribute("loginErrorMsg", "用户名或者密码错误");
+            model.addAttribute("username", username);
             return "login";
         }
         return "admin-index";
