@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en" >
   <meta charset="UTF-8">
   <title>Login Page | Amaze UI Example</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +8,9 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
-  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+  <link rel="alternate icon" type="image/png" th:href="@{/assets/i/favicon.png}">
+  <link rel="stylesheet" th:href="@{/assets/css/amazeui.min.css}"/>
+  <div th:replace="common::reference"></div>
   <style>
     .header {
       text-align: center;
@@ -25,6 +26,7 @@
   </style>
 </head>
 <body>
+
 <div class="header">
   <div class="am-g">
     <h1>Web ide</h1>
@@ -32,6 +34,8 @@
   </div>
   <hr />
 </div>
+
+<div th:if="${!#lists.isEmpty(loginErrorMsg)}" th:include="common::modal('modalId', '登录失败', ${loginErrorMsg})" ></div>
 <div class="am-g">
   <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
     <h3>登录</h3>
@@ -44,12 +48,12 @@
     <br>
     <br>
 
-    <form method="post" class="am-form">
-      <label for="email">邮箱:</label>
-      <input type="email" name="" id="email" value="">
+    <form method="post" class="am-form" action="/login">
+      <label for="username">用户名:</label>
+      <input type="text" name="username" id="username" value="">
       <br>
       <label for="password">密码:</label>
-      <input type="password" name="" id="password" value="">
+      <input type="password" name="password" id="password" value="">
       <br>
       <label for="remember-me">
         <input id="remember-me" type="checkbox">
@@ -62,8 +66,10 @@
       </div>
     </form>
     <hr>
+
     <p>© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
   </div>
 </div>
+
 </body>
 </html>
