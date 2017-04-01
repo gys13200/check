@@ -1,4 +1,4 @@
-package org.prototype.check.controller;
+package org.prototype.check.base.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

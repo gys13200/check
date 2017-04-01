@@ -1,4 +1,4 @@
-package org.prototype.check.shiro.configuration;
+package org.prototype.check.configuration;
 
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;

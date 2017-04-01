@@ -1,7 +1,8 @@
 spring:
   thymeleaf:
     cache: false       # 关闭缓存
-    mode: LEGACYHTML5  # 非严格html
+    mode: HTML  # 非严格html
+
   datasource:
     url: jdbc:mysql://mysql123.nat123.cc:30061/esswmb
     username: root

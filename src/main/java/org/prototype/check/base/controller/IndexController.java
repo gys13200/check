@@ -1,4 +1,4 @@
-package org.prototype.check.controller;
+package org.prototype.check.base.controller;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;

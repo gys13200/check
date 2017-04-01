@@ -1,4 +1,4 @@
-package org.prototype.check.servelet;
+package org.prototype.check.base.servelet;
 
 import com.baidu.ueditor.ActionEnter;
 

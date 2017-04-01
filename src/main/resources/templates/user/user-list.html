@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" xmlns:th="http://www.thymeleaf.org">
+<html class="no-js" xmlns:th="http://www.thymeleaf.org" xmlns:common="http:://www.gys13200.org">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,6 +66,13 @@
           </div>
         </div>
         <div class="am-u-sm-12 am-u-md-3">
+          <div class="am-form-group">
+            <select data-am-selected="{btnSize: 'sm'}" common:select="ss, initOption=请选择, initValue=0" >
+
+            </select>
+          </div>
+        </div>
+        <div class="am-u-sm-12 am-u-md-3">
           <div class="am-input-group am-input-group-sm">
             <input type="text" class="am-form-field">
           <span class="am-input-group-btn">
@@ -96,7 +103,7 @@
                 <td th:text="${user.userId}" th:id="${user.userId}">1</td>
                 <td><a href="#" th:text="${user.username}" ></a></td>
                 <td th:text="${user.name}">default</td>
-                <td th:text="${user.gender}" class="am-hide-sm-only">测试1号</td>
+                <td common:fromDict="${'ss,' + user.gender}" class="am-hide-sm-only">测试1号</td>
                 <td th:text="${user.email}" class="am-hide-sm-only">2014年9月4日 7:28:47</td>
                 <td>
                   <div class="am-btn-toolbar">
